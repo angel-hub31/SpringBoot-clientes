@@ -1,0 +1,22 @@
+# --- Maven ---
+target/
+
+# --- Eclipse ---
+.setting/
+.classpath
+project
+.factorypath
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+out/
+
+# --- VS Code ---
+.vscode/
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+
+
