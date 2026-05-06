@@ -10,5 +10,6 @@ public class HolaController {
 	public String saludar() {
 		return "Hola desde Spring Boot";
 	}
+	
 
 }
