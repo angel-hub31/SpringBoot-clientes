@@ -44,6 +44,7 @@ public class ClienteJdbc {
 
 		} catch (Exception e) {
 			log.error("Error al insertar: ", e);
+			throw new RuntimeException("error al insertar: "+ e.getMessage());
 
 		} finally {
 			try {
