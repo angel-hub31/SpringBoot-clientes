@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.krakedev.clientes.entidades.Cliente;
 import com.krakedev.clientes.services.ServicioCliente;
+import com.krakedev.jdbc.Clientes.services.ServicioClienteJdbc;
 
 @RestController
 @RequestMapping("/jdbc/clientes")
 public class ClienteJdbcController {
 
-	private final ServicioCliente servicio;
+	private final ServicioClienteJdbc servicio;
 
-	public ClienteJdbcController(ServicioCliente servicio) {
+	public ClienteJdbcController(ServicioClienteJdbc servicio) {
 
 		this.servicio = servicio;
 	}
@@ -33,7 +34,7 @@ public class ClienteJdbcController {
 	//
 	@GetMapping
 	public List<Cliente>listar(){
-		return servicio.Listar();
+		return servicio.listar();
 		
 	}
 	@GetMapping("/{cedula}")
