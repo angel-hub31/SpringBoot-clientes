@@ -37,6 +37,10 @@ public class ClienteJdbc {
 			cliente = new Cliente(cedula, nombre, apellido, edad);
 			int filas = ps.executeUpdate();
 			log.info("Filas insertadas: " + filas);
+			if (con != null && !con.getAutoCommit()) {
+				con.commit();
+				log.info("Commit ejecutado con exito en insertar.");
+			}
 
 		} catch (Exception e) {
 			log.error("Error al insertar: ", e);
@@ -151,6 +155,11 @@ public class ClienteJdbc {
 			int fila = ps.executeUpdate();
 			cliente = new Cliente(cedula, nuevoNombre, nuevoApellido, nuevaEdad);
 
+			if (con != null && !con.getAutoCommit()) {
+				con.commit();
+				log.info("Commit ejecutado con éxito en insertar.");
+			}
+			
 		} catch (Exception e) {
 			log.error("error al actualizar: ", e);
 		} finally {
@@ -180,6 +189,11 @@ public class ClienteJdbc {
 
 			ps.setString(1, cedula);
 			int fila = ps.executeUpdate();
+			
+			if (con != null && !con.getAutoCommit()) {
+				con.commit();
+				log.info("Commit ejecutado con éxito en insertar.");
+			}
 			return true;
 
 		} catch (Exception e) {
