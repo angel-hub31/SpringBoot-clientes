@@ -84,6 +84,8 @@ public class ClienteJdbc {
 
 		} catch (Exception e) {
 			log.error("Error al listar: ", e);
+			throw new RuntimeException("error al listar: "+ e.getMessage());
+
 
 		} finally {
 			try {
@@ -123,6 +125,8 @@ public class ClienteJdbc {
 
 		} catch (Exception e) {
 			log.error("Error al buscar por cedula: ", e);
+			throw new RuntimeException("error al buscar: "+ e.getMessage());
+
 
 		} finally {
 		    try {
@@ -163,6 +167,8 @@ public class ClienteJdbc {
 			
 		} catch (Exception e) {
 			log.error("error al actualizar: ", e);
+			throw new RuntimeException("error al actualizar: "+ e.getMessage());
+
 		} finally {
 			try {
 				if(con !=null) {
@@ -199,8 +205,11 @@ public class ClienteJdbc {
 
 		} catch (Exception e) {
 			log.error("error al eliminar: ", e);
+			throw new RuntimeException("error al eliminar: "+ e.getMessage());
 
-			return false;
+			
+
+	
 
 		} finally {
 			try {

@@ -9,8 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 public class Conexion {
 	private static final Logger log =LogManager.getLogger(InsertCliente.class);
-	private static final String URL="jdbc:postgresql://localhost:5432/postgres";
-	private static final String USER="postgres";
+	private static final String URL="jdbc:mysql://localhost:3306/mydb";
+	private static final String USER="root";
 	private static final String PASSWORD ="1004034391";
 	//no se necessita instanciar una conexion
 	public static Connection getConnection() {
